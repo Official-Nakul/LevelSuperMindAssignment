@@ -35,7 +35,7 @@ function ChatSupport() {
       const msg = message;
       setMessage("");
       const response = await axios.post(
-        "https://levelsupermind-backend.onrender.com/api/chat",
+        "https://levelsupermindassignment.onrender.com/api/chat",
         {
           msg,
         }
