@@ -7,7 +7,7 @@ const BASE_API_URL = "https://api.langflow.astra.datastax.com";
 const LANGFLOW_ID = process.env.LANGFLOW_ID;
 const FLOW_ID = process.env.FLOW_ID;
 const APPLICATION_TOKEN = process.env.APPLICATION_TOKEN;
-const ENDPOINT = "chatbot"; // The endpoint name of the flow
+const ENDPOINT = "superminds";
 
 async function runFlow(message) {
   const apiUrl = `${BASE_API_URL}/lf/${LANGFLOW_ID}/api/v1/run/${ENDPOINT}`;
