@@ -83,10 +83,7 @@ function ChatSupport() {
             <DialogTitle className="sr-only">Chat Support</DialogTitle>
           </Dialog>
         </div>
-        <div
-          aria-describedby="chat-drawer"
-          className="flex-grow overflow-y-auto p-4"
-        >
+        <div className="flex flex-col h-full overflow-y-auto no-scrollbar p-4">
           {/* Display chat history */}
           {chatHistory.map((message, index) => (
             <div
@@ -101,14 +98,13 @@ function ChatSupport() {
             >
               <span className="text-sm text-gray-800">
                 {message.sender === "bot" ? (
-                  <ReactMarkdown>{message.text}</ReactMarkdown>
+                  <ReactMarkdown>{message.text}</ReactMarkdown> // Render markdown
                 ) : (
                   message.text
                 )}
               </span>
             </div>
           ))}
-
           {/* Loading skeleton */}
           {loading && (
             <div className="self-start max-w-xs min-w-48 p-3 rounded-lg mb-2 bg-gray-300 animate-pulse">
