@@ -83,7 +83,7 @@ function ChatSupport() {
             <DialogTitle className="sr-only">Chat Support</DialogTitle>
           </Dialog>
         </div>
-        <div className="flex flex-col h-full overflow-y-auto no-scrollbar p-4">
+        <div className="flex flex-col h-full overflow-y-auto no-scrollbar p-4 min-h-[44rem]">
           {/* Display chat history */}
           {chatHistory.map((message, index) => (
             <div
@@ -115,7 +115,7 @@ function ChatSupport() {
           {/* Scroll to bottom */}
           <div ref={bottomRef} />
         </div>
-        <div className="h-fit flex justify-around items-center gap-4 w-full px-4">
+        <div className="h-fit flex justify-around items-center gap-4 w-full px-4 sticky bottom-4">
           <Textarea
             className="resize-none py-3 px-4 h-11 min-h-0 no-scrollbar outline-none rounded-full flex-1 focus-visible:ring-offset-0 focus-visible:ring-0"
             placeholder="Ask AI..."
