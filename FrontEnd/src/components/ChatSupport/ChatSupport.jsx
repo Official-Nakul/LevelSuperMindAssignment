@@ -115,7 +115,7 @@ function ChatSupport() {
           {/* Scroll to bottom */}
           <div ref={bottomRef} />
         </div>
-        <div className=" bg-background sticky bottom-0 flex justify-center items-center pb-2">
+        <div className=" bg-background sticky bottom-0 flex justify-center items-center pb-2 pt-4">
           <div className="h-fit flex justify-around items-center gap-4 w-full px-4 self-start">
             <Textarea
               className="resize-none py-3 px-4 h-11 min-h-0 no-scrollbar outline-none rounded-full flex-1 focus-visible:ring-offset-0 focus-visible:ring-0"
