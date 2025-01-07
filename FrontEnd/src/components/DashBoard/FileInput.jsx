@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { CardHeader } from "@/components/ui/card";
 import { useState, useContext } from "react";
 import { CsvContext } from "./CsvContext";
@@ -69,13 +69,15 @@ export function InputFile() {
       onDrop={handleDrop}
       onDragOver={handleDragOver}
     >
-      <CardHeader className="p-0">
+      <CardHeader>
         <h2 className="text-2xl font-semibold text-center">Upload CSV File</h2>
       </CardHeader>
       <CardContent className="flex flex-col justify-center items-center p-0">
         <img src={Upload} alt="Upload Icon" className=" h-[10rem]" />
         <p className="text-gray-600">Drag & Drop your CSV file here</p>
         <p className="text-sm text-gray-500">or</p>
+      </CardContent>
+      <CardFooter>
         <Input
           type="file"
           accept=".csv"
@@ -94,7 +96,7 @@ export function InputFile() {
             <span className="text-gray-700">{fileName}</span>
           </div>
         )}
-      </CardContent>
+      </CardFooter>
     </Card>
   );
 }

@@ -43,7 +43,7 @@ const chartConfig = {
 
 export function BarChartComp() {
   return (
-    <Card>
+    <Card className="h-full">
       <CardHeader>
         <CardTitle>Bar Chart</CardTitle>
         <CardDescription>
