@@ -115,22 +115,24 @@ function ChatSupport() {
           {/* Scroll to bottom */}
           <div ref={bottomRef} />
         </div>
-        <div className="h-fit flex justify-around items-center gap-4 w-full px-4 sticky bottom-4">
-          <Textarea
-            className="resize-none py-3 px-4 h-11 min-h-0 no-scrollbar outline-none rounded-full flex-1 focus-visible:ring-offset-0 focus-visible:ring-0"
-            placeholder="Ask AI..."
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) {
-                e.preventDefault(); // Prevent new line
-                handleSend(); // Call the handleSend function
-              }
-            }}
-          />
-          <Button className="rounded-full h-10 w-10 p-0" onClick={handleSend}>
-            <img src={upArrow} alt="Send" />
-          </Button>
+        <div className=" bg-background sticky bottom-0 flex justify-center items-center pb-2">
+          <div className="h-fit flex justify-around items-center gap-4 w-full px-4 self-start">
+            <Textarea
+              className="resize-none py-3 px-4 h-11 min-h-0 no-scrollbar outline-none rounded-full flex-1 focus-visible:ring-offset-0 focus-visible:ring-0"
+              placeholder="Ask AI..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault(); // Prevent new line
+                  handleSend(); // Call the handleSend function
+                }
+              }}
+            />
+            <Button className="rounded-full h-10 w-10 p-0" onClick={handleSend}>
+              <img src={upArrow} alt="Send" />
+            </Button>
+          </div>
         </div>
       </div>
     </>
