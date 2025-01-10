@@ -83,7 +83,7 @@ function ChatSupport() {
             <DialogTitle className="sr-only">Chat Support</DialogTitle>
           </Dialog>
         </div>
-        <div className="flex flex-col h-full overflow-y-auto no-scrollbar p-4 min-h-[43rem]">
+        <div className="flex flex-col h-full overflow-y-auto no-scrollbar p-4 min-h-[39.5rem]">
           {/* Display chat history */}
           {chatHistory.map((message, index) => (
             <div
