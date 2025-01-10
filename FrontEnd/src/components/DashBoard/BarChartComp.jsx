@@ -17,7 +17,7 @@ import {
 const chartData = [
   { metric: "comments", carousel: 1263.35, image: 1364.619048, reels: 1142 },
   { metric: "likes", carousel: 1630.8, image: 1234.452381, reels: 1401.131579 },
-  { metric: "shares", carousel: 57.7, image: 42.833333, reels: 47.815789 },
+  { metric: "shares", carousel: 572.7, image: 420.833333, reels: 469.815789 },
   {
     metric: "views",
     carousel: 2872.95,

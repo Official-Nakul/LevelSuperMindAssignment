@@ -1,8 +1,8 @@
 import { BarChartComp } from "./BarChartComp";
 import { PieChartComp } from "./PieChartComp";
-import { InputFile } from "./FileInput";
-import { FileDisplay } from "./FileDisplay";
+import { DataDisplay } from "./DataDisplay";
 import { CsvProvider } from "./CsvContext";
+import { LineChart } from "./LineChart";
 function DashBoard() {
   return (
     <>
@@ -16,11 +16,11 @@ function DashBoard() {
               <PieChartComp />
             </div>
             <div className=" rounded-xl bg-muted/50 h-full flex justify-center items-center">
-              <InputFile />
+              <LineChart />
             </div>
           </div>
           <div className="min-h-full flex-1 rounded-xl bg-muted/50 md:min-h-min">
-            <FileDisplay />
+            <DataDisplay />
           </div>
         </CsvProvider>
       </div>
