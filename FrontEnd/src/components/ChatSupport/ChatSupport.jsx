@@ -39,7 +39,7 @@ function ChatSupport() {
       const response = await axios.post(
         "https://levelsupermindassignment.onrender.com/api/chat",
         {
-          message,
+          msg,
         }
       );
 
