@@ -6,6 +6,8 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
 
+import remarkGfm from "remark-gfm"
+
 import { AlertCircle } from "lucide-react";
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -28,7 +30,7 @@ function ChatSupport() {
     const newMessage = { sender: "user", text: message };
     setChatHistory((prevHistory) => [...prevHistory, newMessage]);
 
-    setMessage(""); // Clear input field
+    
     setLoading(true); // Start loading skeleton
 
     try {
@@ -37,14 +39,14 @@ function ChatSupport() {
       const response = await axios.post(
         "https://levelsupermindassignment.onrender.com/api/chat",
         {
-          msg,
+          message,
         }
       );
 
       // Assuming response contains chatbot's reply in Markdown format
       const chatbotMessage =
         response.data.outputs[0].outputs[0].results.message.data.text;
-
+      console.log(chatbotMessage);
       // Add chatbot's response to chat history
       const botMessage = { sender: "bot", text: chatbotMessage };
       setChatHistory((prevHistory) => [...prevHistory, botMessage]);
@@ -59,6 +61,7 @@ function ChatSupport() {
 
     setLoading(false); // Stop loading skeleton
   };
+  console.log(chatHistory);
 
   // Scroll to the bottom whenever chatHistory changes
   useEffect(() => {
@@ -98,7 +101,7 @@ function ChatSupport() {
             >
               <span className="text-sm text-gray-800">
                 {message.sender === "bot" ? (
-                  <ReactMarkdown>{message.text}</ReactMarkdown> // Render markdown
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{message.text}</ReactMarkdown> // Render markdown
                 ) : (
                   message.text
                 )}
