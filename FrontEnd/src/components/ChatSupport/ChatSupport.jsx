@@ -35,14 +35,14 @@ function ChatSupport() {
 
     try {
       const msg = message;
-      setMessage("");
+      
       const response = await axios.post(
         "https://levelsupermindassignment.onrender.com/api/chat",
         {
-          msg,
+          message,
         }
       );
-
+setMessage("");
       // Assuming response contains chatbot's reply in Markdown format
       const chatbotMessage =
         response.data.outputs[0].outputs[0].results.message.data.text;
